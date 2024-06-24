@@ -1,0 +1,129 @@
+.container {
+    background-image: url('../../assets/fondito.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position:relative;
+    opacity: 0.95;
+}
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(173, 19, 124, 0.95); /* Establece el color de fondo con opacidad */
+}
+.foreground-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../assets/rectangle.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+
+mat-card{
+    max-width: 400px;
+    width: 600%;
+    padding: 20px;
+    background-color: rgba(242, 238, 238, 0); /* Color blanco con una opacidad del 80% */
+    border: none; 
+    height: 30%;
+    @media screen and (max-width: 500px) {
+        max-width: 90%;
+    }
+}
+mat-card-title{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+   
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    
+    
+
+}
+mat-form-field{
+    width: 120%;
+   
+    margin-bottom: 20px;
+    color: rgb(240, 238, 238);
+    background-color: white;
+    height: 56px;
+    border: none; 
+    color: white;
+ 
+
+}
+
+
+
+
+button{
+   
+    width: 30%;
+    color: white;
+
+}
+button1{
+   
+    width: 30%;
+    color: white;
+
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+    mat-card-title{
+        font-size: 20px;
+        color: rgb(252, 248, 248);
+        border: none; 
+
+    }
+    mat-form-field{
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    
+}
+
+
+.logo-container {
+    position:fixed; /* Posicionamiento absoluto con respecto al contenedor */
+    top: 90px; /* Ajusta la posición vertical según sea necesario */
+    left: 50; /* Ajusta la posición horizontal según sea necesario */
+}
+
+
+
+
+.error-snackbar{
+    background-color: #f4f2f2 !important;
+}
+.mat-form-field-outline {
+    box-sizing: border-box; /* Asegura que el tamaño total del cuadro no cambie al agregar un borde */
+    width: auto;
+}
+
+/* Ajusta el margen inferior entre el label y el input */
+.mat-form-field-label, .mat-form-field-flex {
+    margin-bottom: 8px; /* Ajusta el margen inferior según sea necesario */
+}

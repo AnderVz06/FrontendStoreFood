@@ -1,0 +1,34 @@
+
+
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar color="purple" class="navbar"> <!-- Cambia color a "fuchsia" -->
+    <span class="navbar-brand">StoreFood</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/admin/products" routerLinkActive="active">Home</button>
+    <button mat-button routerLink="/admin/analytics" routerLinkActive="active">Analytics</button>
+    <button mat-button routerLink="/admin/category" routerLinkActive="active">Category</button>
+    <button mat-button routerLink="/admin/factory" routerLinkActive="active">Product</button>
+    <button mat-button routerLink="/admin/credite" routerLinkActive="active">Credite</button>
+    <button mat-button routerLink="/admin/offers" routerLinkActive="active">Offers</button>
+    <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isCustomerLoggedIn">
+  <mat-toolbar color="purple" class="navbar"> <!-- Cambia color a "fuchsia" -->
+    <span class="navbar-brand">StoreFood</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/customer/products" routerLinkActive="active">Home</button>
+    <button mat-button routerLink="/customer/cart" routerLinkActive="active">Cart</button>
+    <button mat-button routerLink="/customer/orders" routerLinkActive="active">Orders</button>
+    <button mat-button routerLink="/customer/profile" routerLinkActive="active">Profile</button>
+    <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>
+
+
+
+  <router-outlet></router-outlet>
+
+    
+

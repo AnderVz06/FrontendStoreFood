@@ -1,0 +1,40 @@
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffffff; /* Color de fondo del contenedor */
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #800080; /* Color de fondo de la barra de navegación */
+    color: white; /* Color del texto en la barra de navegación */
+  }
+  
+  .navbar-brand {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 16px;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  button {
+    color: white; /* Color del texto de los botones */
+    text-transform: uppercase;
+    margin-left: 8px;
+  }
+  
+  button.active {
+    font-weight: 600;
+  }
+  

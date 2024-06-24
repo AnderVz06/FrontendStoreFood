@@ -1,0 +1,80 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 90px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #800080;;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: #800080;;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.file-upload-label span {
+    margin-right: 8px;
+}
+
+.file-upload-label mat-icon {
+    font-size: 20px;
+}
+
+.image-preview {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    max-width: 50%; /* Ajusta el ancho máximo de la imagen al tamaño del contenedor */
+    max-height: 50%; 
+    object-fit: contain; 
+}
+
+.circle-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Hace que el contenedor sea un círculo */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del círculo */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Opcional: Agrega una sombra al círculo */
+    display: flex; /* Agrega un display flex para centrar la imagen verticalmente */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.mat-form-field {
+    margin-top: 20px;
+    width: 100%;
+}
+
+button {
+    align-self: center;
+    margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}

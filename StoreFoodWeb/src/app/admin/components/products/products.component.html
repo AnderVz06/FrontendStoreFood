@@ -1,0 +1,47 @@
+<form [formGroup]="searchFactoryForm" class="search-form" (submit)="submitForm()">
+    <mat-form-field apperance = "outline" class="search-input">
+        <mat-label>Enter keyword to search</mat-label>
+        <input matInput formControlName = "title">
+        <button mat-button matSuffix color="primary" [disabled]="searchFactoryForm.invalid">
+            <mat-icon>search</mat-icon>
+        </button>
+    </mat-form-field>
+</form>
+
+<div class="factory-list">
+    <mat-card class="factory-card" *ngFor="let factory of factorys">
+        <div class ="factory-image">
+            <img [src]="factory.processedImg" alt="factory-image">
+        </div>
+        <div class="factory-details">
+            <h2 class="product-name">{{factory.name}}</h2>
+            <p class="product-description">{{factory.description}}</p>
+
+            <mat-divider></mat-divider>
+            <div class="factory-info">
+                <div class="info-row">
+                    <span class="info-label">Price</span>
+                    <span class="info-value">${{factory.price}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Category:</span>
+                    <span class="info-value">{{factory.categoryName}}</span>
+                </div>
+
+            </div>
+           <mat-divider></mat-divider>
+           <div class ="actions">
+            <button mat-raised-button color ="purple" class = "update-button"
+               [routerLink]="'/admin/faq'+ factory.id">FAQ</button>
+               <button mat-raised-button color ="accent" class = "update-button"
+               [routerLink]="'/admin/factory'+ factory.id">Update</button>
+               <button mat-raised-button color ="warn" class = "delete-button" (click)="deleteFactory(factory.id)">
+                Delete
+              </button>
+              
+           </div>
+
+        </div>
+
+    </mat-card>
+</div>

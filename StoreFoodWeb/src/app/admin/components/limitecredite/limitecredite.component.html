@@ -1,0 +1,102 @@
+<form [formGroup]="creditForm" (ngSubmit)="onSubmit()" class="credit-form">
+ 
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de moneda</mat-label>
+      <mat-select id="tipoMoneda" formControlName="tipoMoneda">
+        <mat-option value="USD">USD</mat-option>
+        <mat-option value="PEN">PEN</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de tasa de interés</mat-label>
+      <mat-select id="tipoTasaInteres" formControlName="tipoTasaInteres">
+        <mat-option value="nominal">Nominal</mat-option>
+        <mat-option value="efectiva">Efectiva</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de capitalización</mat-label>
+      <mat-select id="tipoCapitalizacion" formControlName="tipoCapitalizacion">
+        <mat-option value="mensual">Mensual</mat-option>
+        <mat-option value="bimestral">Bimestral</mat-option>
+        <mat-option value="trimestral">Trimestral</mat-option>
+        <mat-option value="semestral">Semestral</mat-option>
+        <mat-option value="cuatrimestral">Cuatrimestral</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Tasa de interés anual</mat-label>
+      <input matInput type="number" id="tasaAnual" formControlName="tasaAnual" step="0.01">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Número de cuotas</mat-label>
+      <input matInput type="number" id="cuotas" formControlName="cuotas" min="1">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Tiempo de crédito</mat-label>
+      <input matInput type="number" id="tiempoCredito" formControlName="tiempoCredito" min="1">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Pago inicial</mat-label>
+      <input matInput type="number" id="pagoInicial" formControlName="pagoInicial" step="0.01">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Monto a financiar</mat-label>
+      <input matInput type="number" id="montoFinanciar" formControlName="montoFinanciar" step="0.01">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Tasa de moratoria</mat-label>
+      <input matInput type="number" id="tasaMoratoria" formControlName="tasaMoratoria" step="0.01">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Límite de crédito</mat-label>
+      <input matInput type="number" id="limiteCredito" formControlName="limiteCredito" step="0.01">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha de pago mensual</mat-label>
+      <input matInput type="date" id="fechaPagoMensual" formControlName="fechaPagoMensual">
+    </mat-form-field>
+  
+    <mat-checkbox id="conPlazoGracia" formControlName="conPlazoGracia">
+      ¿Con plazo de gracia?
+    </mat-checkbox>
+  
+    <div *ngIf="creditForm.get('conPlazoGracia').value">
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo de plazo de gracia</mat-label>
+          <mat-select id="tipoPlazoGracia" formControlName="tipoPlazoGracia">
+            <mat-option value="total">Total</mat-option>
+            <mat-option value="parcial">Parcial</mat-option>
+          </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Meses de inicio</mat-label>
+          <input matInput type="number" id="mesesInicio" formControlName="mesesInicio" min="0">
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Tiempo de plazo de gracia</mat-label>
+          <input matInput type="number" id="tiempoPlazoGracia" formControlName="tiempoPlazoGracia" min="0">
+        </mat-form-field>
+    
+        <!-- Este campo debería ser tipo date si estás capturando una fecha -->
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha final del mes</mat-label>
+          <input matInput type="date" id="fechaFinalMes" formControlName="fechaFinalMes">
+        </mat-form-field>
+      </div>
+  
+    <button mat-raised-button color="primary" type="submit">Crear Crédito</button>
+  </form>
+  

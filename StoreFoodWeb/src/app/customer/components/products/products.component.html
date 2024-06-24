@@ -1,0 +1,98 @@
+<form [formGroup]="searchFactoryForm" class="search-form" (submit)="submitForm()">
+    <mat-form-field apperance = "outline" class="search-input">
+        <mat-label>Enter keyword to search</mat-label>
+        <input matInput formControlName = "title">
+        <button mat-button matSuffix color="primary" [disabled]="searchFactoryForm.invalid">
+            <mat-icon>search</mat-icon>
+        </button>
+    </mat-form-field>
+</form>
+
+<div class="factory-list">
+    <mat-card class="factory-card" *ngFor="let factory of factorys | slice:0:6">
+        <div class ="factory-image">
+            <img [src]="factory.processedImg" alt="factory-image">
+        </div>
+        <div class="factory-details">
+            <h2 class="product-name">{{factory.name}}</h2>
+            <p class="product-description">{{factory.description}}</p>
+
+            <mat-divider></mat-divider>
+            <div class="factory-info">
+                <div class="info-row">
+                    <span class="info-label">Price</span>
+                    <span class="info-value">${{factory.price}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Category:</span>
+                    <span class="info-value">{{factory.categoryName}}</span>
+                </div>
+
+            </div>
+           <mat-divider></mat-divider>
+
+           <div class="actions">
+            <button mat-raised-button color="primary" class="update-button" (click)="addToCart(factory.id)">
+                Add to cart 
+            </button>
+           </div>
+           
+
+        </div>
+
+    </mat-card>
+
+</div>
+
+<mat-accordion>
+
+    <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       
+      </mat-panel-title>
+      <mat-panel-description text-align: center>
+                      ver todo
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="factory-list">
+    <mat-card class="factory-card" *ngFor="let factory of filterFactories()">
+        <div class ="factory-image">
+            <img [src]="factory.processedImg" alt="factory-image">
+        </div>
+        <div class="factory-details">
+            <h2 class="product-name">{{factory.name}}</h2>
+            <p class="product-description">{{factory.description}}</p>
+
+            <mat-divider></mat-divider>
+            <div class="factory-info">
+                <div class="info-row">
+                    <span class="info-label">Price</span>
+                    <span class="info-value">${{factory.price}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Category:</span>
+                    <span class="info-value">{{factory.categoryName}}</span>
+                </div>
+
+            </div>
+           <mat-divider></mat-divider>
+
+           <div class="actions">
+            <button mat-raised-button color="primary" class="update-button" (click)="addToCart(factory.id)">
+                Add to cart 
+            </button>
+           </div>
+
+        </div>
+
+    </mat-card>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+
+
+
+

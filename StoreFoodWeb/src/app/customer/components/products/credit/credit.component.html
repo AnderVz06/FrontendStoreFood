@@ -1,0 +1,66 @@
+<div class="container">
+    <h2>Add Credit</h2>
+    <form [formGroup]="creditForm" (ngSubmit)="addCredit()">
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label> seleccione el tipo de credito </mat-label>
+          
+            <mat-select formControlName="typeRateInterest" required>
+              <mat-option *ngFor="let option of typeOptions" [value]="option.value">
+                {{ option.label }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="creditForm.get('typeRateInterest')?.hasError('required')">This field is required</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>seleccione el tipo de moneda</mat-label>
+          
+            <mat-select formControlName="typeCurrency" required>
+              <mat-option *ngFor="let option of typeOptions1" [value]="option.value">
+                {{ option.label }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="creditForm.get('typeCurrency')?.hasError('required')">This field is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class ="form-field">
+            <mat-label>Ingrese la tasa de interes</mat-label>
+           <input matInput type="number" placeholder="tasa de interes" formControlName="rateInterest"/>
+        <mat-error *ngIf="creditForm.get('rateInterest')?.hasError('required')">This input is required</mat-error>
+        </mat-form-field>
+
+<mat-form-field appearance="outline" class="form-field">
+     <mat-label>Seleccione el periodo de capitalización</mat-label>
+
+  <mat-select formControlName="typePeriodRate" required>
+
+    <mat-option *ngFor="let option of paymentPeriodOptions" [value]="option.value">
+      {{ option.label }}
+    </mat-option>
+   </mat-select>
+
+
+   <mat-error *ngIf="creditForm.get('typePeriodRate')?.hasError('required')">
+    This field is required
+   </mat-error>
+</mat-form-field>
+
+
+<mat-form-field appearance="outline" class ="form-field">
+    <mat-label>Monto inicial</mat-label>
+   <input matInput type="number" placeholder="Monto inicial" formControlName="initialFee"/>
+<mat-error *ngIf="creditForm.get('initialFee')?.hasError('required')">This input is required</mat-error>
+
+</mat-form-field>
+
+<mat-form-field appearance="outline" class ="form-field">
+    <mat-label>Tiempo en meses </mat-label>
+    <input matInput type="number" placeholder="Tiempo en meses" formControlName="timeLoan"/>
+    <mat-error *ngIf="creditForm.get('timeLoan')?.hasError('required')">This input is required</mat-error>
+</mat-form-field>
+
+<button mat-raised-button color="primary" type ="submit" > Calcular credito</button> 
+
+    </form>
+</div>

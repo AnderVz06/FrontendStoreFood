@@ -1,0 +1,69 @@
+
+<div class="container">
+    <div class="logo-container">
+        <img src="../../assets/logitoF.png" alt="Logo">
+    </div>
+    <mat-card>
+        
+    
+        <mat-card-content>
+            <form [formGroup]="loginForm">
+                
+                <mat-form-field appearance="outline">
+                   
+                    <input matInput formControlName="email" placeholder="Email" required>
+                    <mat-error *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
+                        Please enter a valid email.
+                    </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                   
+                    <input matInput type="{{hidePassword ?'password': 'text'}}" formControlName="password" placeholder="Password" required >
+                    <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                        <mat-icon>{{hidePassword ? 'visibility_off': 'visibility'}}</mat-icon>
+    
+                    </button>
+                    <mat-error *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+                        Please enter a valid password.
+                    </mat-error>
+                </mat-form-field>
+    
+               <h1></h1>
+               <h1></h1>
+               <h1></h1>
+                <button mat-raised-button class="white-button" type="submit" 
+                (click)="onSubmit()">Login</button>
+                <h1></h1>
+               <h1></h1>
+               <h1></h1>
+               <h1></h1>
+               
+               <div class="logo-container1">
+                <img src="../../assets/Frame.png" alt="Logo">
+            </div>
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+    
+    
+            </form>
+        </mat-card-content>
+      
+        <mat-card-content>
+           
+            
+            <button1 mat-button color="accent" routerLink="/signup"> Todavía no tienes cuenta? </button1>
+            <button mat-raised-button class="white-button" routerLink="/signup"> Regístrate </button> 
+           
+        </mat-card-content>
+    
+    </mat-card>
+    
+</div>
+
+<div class="container-foreground" >
+   
+   
+</div>

@@ -1,0 +1,94 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort matSortActive="tipoMoneda" matSortDirection="asc">
+  
+      <ng-container matColumnDef="tipoMoneda">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo Moneda</th>
+        <td mat-cell *matCellDef="let element">{{element.tipoMoneda}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tipoTasaInteres">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo Tasa Interes</th>
+        <td mat-cell *matCellDef="let element">{{element.tipoTasaInteres}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tipoCapitalizacion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo Capitalizacion</th>
+        <td mat-cell *matCellDef="let element">{{element.tipoCapitalizacion}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tasaAnual">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tasa Anual</th>
+        <td mat-cell *matCellDef="let element">{{element.tasaAnual}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="cuotas">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Cuotas</th>
+        <td mat-cell *matCellDef="let element">{{element.cuotas}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tiempoCredito">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tiempo Credito</th>
+        <td mat-cell *matCellDef="let element">{{element.tiempoCredito}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="pagoInicial">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Pago Inicial</th>
+        <td mat-cell *matCellDef="let element">{{element.pagoInicial}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="montoFinanciar">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Monto Financiar</th>
+        <td mat-cell *matCellDef="let element">{{element.montoFinanciar}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="credito">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Credito</th>
+        <td mat-cell *matCellDef="let element">{{element.credito}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tasaMoratoria">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tasa Moratoria</th>
+        <td mat-cell *matCellDef="let element">{{element.tasaMoratoria}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="limiteCredito">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Limite Credito</th>
+        <td mat-cell *matCellDef="let element">{{element.limiteCredito}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fechaPagoMensual">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha Pago Mensual</th>
+        <td mat-cell *matCellDef="let element">{{element.fechaPagoMensual}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="conPlazoGracia">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Con Plazo Gracia</th>
+        <td mat-cell *matCellDef="let element">{{element.conPlazoGracia}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tipoPlazoGracia">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo Plazo Gracia</th>
+        <td mat-cell *matCellDef="let element">{{element.tipoPlazoGracia}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tiempoPlazoGracia">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tiempo Plazo Gracia</th>
+        <td mat-cell *matCellDef="let element">{{element.tiempoPlazoGracia}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="mesesInicio">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Meses Inicio</th>
+        <td mat-cell *matCellDef="let element">{{element.mesesInicio}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fechaFinalMes">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha Final Mes</th>
+        <td mat-cell *matCellDef="let element">{{element.fechaFinalMes}}</td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  
